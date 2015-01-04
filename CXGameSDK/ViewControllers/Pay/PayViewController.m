@@ -350,17 +350,14 @@
                           };
     if ([result isEqualToString:@"success"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_SUCCESSED_NOTIFICATION object:nil userInfo:dic];
-        [SVProgressHUD showSuccessWithStatus:@"支付成功"];
         [TalkingDataAppCpa onPay:[Common getUser].user_id withOrderId:self.cxParams.cp_bill_no withAmount:self.cxParams.amount.intValue*100 withCurrencyType:@"CNY" withPayType:@"unionpay"];
         [self dismissViewControllerAnimated:YES completion:^{
             
         }];
     } else if ([result isEqualToString:@"cancel"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_CANCELLED_NOTIFICATION object:nil userInfo:dic];
-        [SVProgressHUD showErrorWithStatus:@"用户取消"];
     } else {
         [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_FAILED_NOTIFICATION object:nil userInfo:dic];
-        [SVProgressHUD showErrorWithStatus:@"支付失败"];
     }
 }
 
@@ -440,17 +437,14 @@
     NSString *resultState = [resultDic objectForKey:@"resultStatus"];
     if ([resultState isEqualToString:@"9000"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_SUCCESSED_NOTIFICATION object:nil userInfo:dic];
-        [SVProgressHUD showSuccessWithStatus:@"支付成功"];
         [TalkingDataAppCpa onPay:[Common getUser].user_id withOrderId:self.cxParams.cp_bill_no withAmount:self.cxParams.amount.intValue*100 withCurrencyType:@"CNY" withPayType:@"alipay"];
         [self dismissViewControllerAnimated:YES completion:^{
             
         }];
     } else if ([resultState isEqualToString:@"6001"]) {
         [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_CANCELLED_NOTIFICATION object:nil userInfo:dic];
-        [SVProgressHUD showErrorWithStatus:@"用户取消"];
     } else {
         [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_FAILED_NOTIFICATION object:nil userInfo:dic];
-        [SVProgressHUD showErrorWithStatus:@"支付失败"];
     }
 }
 

@@ -109,20 +109,29 @@
 #pragma mark - 支付回调
 - (void)purchaseSuccessedCallBack:(NSNotification *)notification
 {
-    NSDictionary *resultDic = notification.userInfo;
-    NSLog(@"success resultDic:%@",resultDic);
+    NSString *productName = [notification.userInfo objectForKey:@"productName"];
+    NSString *resultStatus = [notification.userInfo objectForKey:@"resultStatus"];
+    NSString *payType = [notification.userInfo objectForKey:@"payType"];
+    NSString *result = [NSString stringWithFormat:@"%@ %@ 支付成功 resultCode=%@", payType, productName, resultStatus];
+    [SVProgressHUD showErrorWithStatus:result];
 }
 
 - (void)purchaseFailedCallBack:(NSNotification *)notification
 {
-    NSDictionary *resultDic = notification.userInfo;
-    NSLog(@"failed resultDic:%@",resultDic);
+    NSString *productName = [notification.userInfo objectForKey:@"productName"];
+    NSString *resultStatus = [notification.userInfo objectForKey:@"resultStatus"];
+    NSString *payType = [notification.userInfo objectForKey:@"payType"];
+    NSString *result = [NSString stringWithFormat:@"%@ %@ 支付失败 resultCode=%@", payType, productName, resultStatus];
+    [SVProgressHUD showErrorWithStatus:result];
 }
 
 - (void)purchaseCancelledCallBack:(NSNotification *)notification
 {
-    NSDictionary *resultDic = notification.userInfo;
-    NSLog(@"cancel resultDic:%@",resultDic);
+    NSString *productName = [notification.userInfo objectForKey:@"productName"];
+    NSString *resultStatus = [notification.userInfo objectForKey:@"resultStatus"];
+    NSString *payType = [notification.userInfo objectForKey:@"payType"];
+    NSString *result = [NSString stringWithFormat:@"%@ %@ 用户取消 resultCode=%@", payType, productName, resultStatus];
+    [SVProgressHUD showErrorWithStatus:result];
 }
 
 @end
