@@ -22,6 +22,8 @@
 #define PURCHASE_FAILED_NOTIFICATION @"purchaseFailedNotification"
 //支付取消通知
 #define PURCHASE_CANCELLED_NOTIFICATION @"purchasecancelledNotification"
+//支付宝回调通知
+#define PURCHASE_PAYMENTRESULT_NOTIFICATION @"purchasePaymentResultNotification"
 
 @interface PayViewController () <UPPayPluginDelegate>
 
@@ -32,7 +34,7 @@
 @end
 
 @implementation PayViewController
-//UIApplicationLaunchOptionsURLKey
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -42,6 +44,8 @@
     } else {
         [self setUpPadView];
     }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(purchasePaymentResult:) name:PURCHASE_PAYMENTRESULT_NOTIFICATION object:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -400,29 +404,53 @@
                        orderSpec, signedString, @"RSA"];
         
         [[AlipaySDK defaultService] payOrder:orderString fromScheme:appScheme callback:^(NSDictionary *resultDic) {
-            NSDictionary *dic = @{@"result": [resultDic objectForKey:@"result"],
-                                  @"resultStatus": [resultDic objectForKey:@"resultStatus"],
-                                  @"payType": @"alipay",
-                                  @"amount": self.cxParams.amount,
-                                  @"productName": self.cxParams.productName,
-                                  @"cp_bill_no": self.cxParams.cp_bill_no
-                                  };
-            NSString *resultState = [resultDic objectForKey:@"resultStatus"];
-            if ([resultState isEqualToString:@"9000"]) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_SUCCESSED_NOTIFICATION object:nil userInfo:dic];
-                [SVProgressHUD showSuccessWithStatus:@"支付成功"];
-                [TalkingDataAppCpa onPay:[Common getUser].user_id withOrderId:self.cxParams.cp_bill_no withAmount:self.cxParams.amount.intValue*100 withCurrencyType:@"CNY" withPayType:@"alipay"];
-                [self dismissViewControllerAnimated:YES completion:^{
-                    
-                }];
-            } else if ([resultState isEqualToString:@"6001"]) {
-                [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_CANCELLED_NOTIFICATION object:nil userInfo:dic];
-                [SVProgressHUD showErrorWithStatus:@"用户取消"];
-            } else {
-                [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_FAILED_NOTIFICATION object:nil userInfo:dic];
-                [SVProgressHUD showErrorWithStatus:@"支付失败"];
-            }
+            [self progressPaymentWithResultDic:resultDic];
         }];
+    }
+}
+
+#pragma mark - purchasePaymentResultNotification
+- (void)purchasePaymentResult:(NSNotification *)notification
+{
+    //如果极简 SDK 不可用,会跳转支付宝钱包进行支付,需要将支付宝钱包的支付结果回传给 SDK
+    NSURL *resultUrl = notification.object;
+    if ([resultUrl.host isEqualToString:@"safepay"]) {
+        [[AlipaySDK defaultService] processOrderWithPaymentResult:resultUrl standbyCallback:^(NSDictionary *resultDic) {
+            [self progressPaymentWithResultDic:resultDic];
+        }];
+    }
+    //支付宝钱包快登授权返回 authCode
+    if ([resultUrl.host isEqualToString:@"platformapi"]) {
+        [[AlipaySDK defaultService] processAuthResult:resultUrl standbyCallback:^(NSDictionary *resultDic) {
+            [self progressPaymentWithResultDic:resultDic];
+        }];
+    }
+}
+
+//处理支付宝回调
+- (void)progressPaymentWithResultDic:(NSDictionary *)resultDic
+{
+    NSDictionary *dic = @{@"result": [resultDic objectForKey:@"result"],
+                          @"resultStatus": [resultDic objectForKey:@"resultStatus"],
+                          @"payType": @"alipay",
+                          @"amount": self.cxParams.amount,
+                          @"productName": self.cxParams.productName,
+                          @"cp_bill_no": self.cxParams.cp_bill_no
+                          };
+    NSString *resultState = [resultDic objectForKey:@"resultStatus"];
+    if ([resultState isEqualToString:@"9000"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_SUCCESSED_NOTIFICATION object:nil userInfo:dic];
+        [SVProgressHUD showSuccessWithStatus:@"支付成功"];
+        [TalkingDataAppCpa onPay:[Common getUser].user_id withOrderId:self.cxParams.cp_bill_no withAmount:self.cxParams.amount.intValue*100 withCurrencyType:@"CNY" withPayType:@"alipay"];
+        [self dismissViewControllerAnimated:YES completion:^{
+            
+        }];
+    } else if ([resultState isEqualToString:@"6001"]) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_CANCELLED_NOTIFICATION object:nil userInfo:dic];
+        [SVProgressHUD showErrorWithStatus:@"用户取消"];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_FAILED_NOTIFICATION object:nil userInfo:dic];
+        [SVProgressHUD showErrorWithStatus:@"支付失败"];
     }
 }
 

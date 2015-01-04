@@ -30,5 +30,11 @@
  *  @param params 支付参数
  */
 - (void)setCXPayParams:(CXPayParams *)params;
+/**
+ *  处理支付宝钱包支付跳回商户app携带的支付结果Url
+ *
+ *  @param resultUrl 支付结果url，传入后由SDK解析
+ */
+- (void)purchasePaymentResult:(NSURL *)resultUrl;
 
 @end

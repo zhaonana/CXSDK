@@ -9,6 +9,9 @@
 #import "BPPurchaseHelper.h"
 #import "PayViewController.h"
 #import "BaseNavigationController.h"
+#import <AlipaySDK/AlipaySDK.h>
+
+#define PURCHASE_PAYMENTRESULT_NOTIFICATION @"purchasePaymentResultNotification"
 
 @implementation BPPurchaseHelper
 
@@ -28,6 +31,11 @@ static BPPurchaseHelper * _sharedHelper;
     PayViewController *payVC = [[PayViewController alloc] init];
     payVC.cxParams = params;
     [params.controller presentViewController:payVC animated:YES completion:nil];
+}
+
+- (void)purchasePaymentResult:(NSURL *)resultUrl
+{
+    [[NSNotificationCenter defaultCenter] postNotificationName:PURCHASE_PAYMENTRESULT_NOTIFICATION object:resultUrl];
 }
 
 @end
