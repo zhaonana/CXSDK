@@ -1,2 +1,2 @@
-CXSDK
-=====
+CXGameSDK
+=========

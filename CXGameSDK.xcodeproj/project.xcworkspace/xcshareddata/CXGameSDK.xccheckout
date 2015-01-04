@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>51164871-9EF3-4170-BB0B-A2AE4CB0193E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CXGameSDK</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>AB6B8B15266F5DD63DF59AF7074BC6DEA3C6583B</key>
+		<string>https://github.com/zhaonana/CXGameSDK.git</string>
+		<key>F79020E1592B2E6AF684B1A5F2E76EF7A78A6BA4</key>
+		<string>https://github.com/zhaonana/CXSDK.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CXGameSDK.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>AB6B8B15266F5DD63DF59AF7074BC6DEA3C6583B</key>
+		<string>../../../CXGameSDK</string>
+		<key>F79020E1592B2E6AF684B1A5F2E76EF7A78A6BA4</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/zhaonana/CXSDK.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F79020E1592B2E6AF684B1A5F2E76EF7A78A6BA4</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>AB6B8B15266F5DD63DF59AF7074BC6DEA3C6583B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CXGameSDK</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F79020E1592B2E6AF684B1A5F2E76EF7A78A6BA4</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CXSDK</string>
+		</dict>
+	</array>
+</dict>
+</plist>
