@@ -32,7 +32,7 @@
 @end
 
 @implementation PayViewController
-
+//UIApplicationLaunchOptionsURLKey
 - (void)viewDidLoad
 {
     [super viewDidLoad];

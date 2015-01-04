@@ -20,15 +20,6 @@
     MainViewController *mainCon = [[MainViewController alloc] init];
     self.window.rootViewController = mainCon;
     
-//    //第三方登录
-//    [ShareSDK registerApp:@"3d45f757ed94"];
-//    //sina
-//    [ShareSDK connectSinaWeiboWithAppKey:@"1058952496"
-//                               appSecret:@"a10d7f5dc33958d257db950c6106acdb"
-//                             redirectUri:@"http://www.weibo.com/u/2389484970/home?wvr=5"];
-//    //QQ
-//    [ShareSDK connectQZoneWithAppKey:@"1103363769" appSecret:@"qX2dzDo87weJZfA5" qqApiInterfaceCls:[QQApiInterface class] tencentOAuthCls:[TencentOAuth class]];
-    
     //TD
     [TalkingDataAppCpa init:@"9ab82b2f6801479495e059551b099325" withChannelId:@"AppStore"];
     
@@ -38,15 +29,9 @@
     return YES;
 }
 
-//- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url
-//{
-//    return [ShareSDK handleOpenURL:url wxDelegate:self];
-//}
-//
+//cxgamesdk://safepay/?{"memo":{"ResultStatus":"6001","memo":"用户中途取消","result":""},"requestType":"safepay"}
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation
-{
-//    return [ShareSDK handleOpenURL:url sourceApplication:sourceApplication annotation:annotation wxDelegate:self];
-    
+{    
     //如果极简 SDK 不可用,会跳转支付宝钱包进行支付,需要将支付宝钱包的支付结果回传给 SDK if ([url.host isEqualToString:@"safepay"]) {
     if ([url.host isEqualToString:@"safepay"]) {
         [[AlipaySDK defaultService] processOrderWithPaymentResult:url standbyCallback:^(NSDictionary *resultDic) {
@@ -67,12 +52,6 @@
     // iPhone doesn't support upside down by default, while the iPad does.  Override to allow all orientations always, and let the root view controller decide what's allowed (the supported orientations mask gets intersected).
     return UIInterfaceOrientationMaskAll;
 }
-
-//- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
-//{
-////    return UIInterfaceOrientationMaskPortrait;    //竖屏
-//    return UIInterfaceOrientationMaskLandscapeRight; //横屏
-//}
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {
