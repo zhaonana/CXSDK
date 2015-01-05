@@ -54,8 +54,26 @@
 
 - (void)setUpView
 {
+    // no transforms applied to window in iOS 8, but only if compiled with iOS 8 sdk as base sdk, otherwise system supports old rotation logic.
+    BOOL ignoreOrientation = NO;
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
+    if ([[NSProcessInfo processInfo] respondsToSelector:@selector(operatingSystemVersion)]) {
+        ignoreOrientation = YES;
+    }
+#endif
+    
+    float screenHeight = 0;
+    float screenWidth = 0;
+    if (ignoreOrientation) {
+        screenHeight = KSCREENWIDTH;
+        screenWidth = KSCREENHEIGHT;
+    } else {
+        screenHeight = KSCREENHEIGHT;
+        screenWidth = KSCREENWIDTH;
+    }
+
     //set navigationView
-    UIView *navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, 320, 39)];
+    UIView *navigationView = [[UIView alloc] initWithFrame:CGRectMake(0, 20, screenWidth, 39)];
     [navigationView setBackgroundColor:[UIColor blackColor]];
     [self.view addSubview:navigationView];
     
@@ -69,14 +87,14 @@
     [navigationView addSubview:backButton];
     
     //set titleLabel
-    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(123, 8, 74, 21)];
+    UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((screenWidth - 74)/2, 8, 74, 21)];
     [titleLabel setText:@"充值中心"];
     [titleLabel setFont:[UIFont systemFontOfSize:18.0]];
     [titleLabel setTextColor:[UIColor whiteColor]];
     [navigationView addSubview:titleLabel];
     
     //set leftBarView
-    UIImageView *leftImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 59, 75, 509)];
+    UIImageView *leftImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 59, 75, screenHeight - 59)];
     [leftImgView setImage:[UIImage imageNamed:@"bx_left_bar_bg"]];
     [self.view addSubview:leftImgView];
     
@@ -104,7 +122,7 @@
     [self.view addSubview:_uppayButton];
     
     //set contentView
-    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(76, 59, 244, 59)];
+    UIView *contentView = [[UIView alloc] initWithFrame:CGRectMake(76, 59, screenWidth - 76, 59)];
     [contentView setBackgroundColor:[UIColor colorWithRed:255.0/255.0 green:253.0/255.0 blue:204.0/255.0 alpha:1.0]];
     [self.view addSubview:contentView];
     
@@ -133,7 +151,7 @@
     [self.view addSubview:_sureLabel];
     
     //set sureButton
-    UIButton *sureButton = [[UIButton alloc] initWithFrame:CGRectMake(98, 166, 200, 30)];
+    UIButton *sureButton = [[UIButton alloc] initWithFrame:CGRectMake((screenWidth - 275)/2 + 75, 166, 200, 30)];
     [sureButton setTitle:@"立即支付" forState:UIControlStateNormal];
     [sureButton setTitle:@"立即支付" forState:UIControlStateSelected];
     sureButton.titleLabel.font = [UIFont systemFontOfSize:14.0];
