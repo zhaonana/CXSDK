@@ -1,6 +1,8 @@
 /**
  * \file base64.h
  */
+#import <Foundation/Foundation.h>
+
 #ifndef XYSSL_BASE64_H
 #define XYSSL_BASE64_H
 

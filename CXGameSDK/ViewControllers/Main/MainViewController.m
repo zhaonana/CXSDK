@@ -92,6 +92,7 @@
 - (void)startPay
 {
     CXPayParams *params = [[CXPayParams alloc] init];
+    params.appScheme = @"cxgamesdk";
     params.amount = @"0.01";
     params.productName = @"商品名称";
     params.productDescription = @"商品描述";

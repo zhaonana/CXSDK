@@ -7,12 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 /**
  *  支付参数
  */
 @interface CXPayParams : NSObject
 
+/**
+ *  应用注册scheme,在CXSDKDemo-Info.plist定义URL types
+ */
+@property (nonatomic, copy) NSString *appScheme;
 /**
  *  价格
  */

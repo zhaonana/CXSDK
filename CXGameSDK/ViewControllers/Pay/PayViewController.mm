@@ -11,7 +11,6 @@
 #import "Order.h"
 #import "DataSigner.h"
 #import "UPPayPlugin.h"
-#import "MainViewController.h"
 #import "TalkingDataAppCpa.h"
 #import "CXCommon.h"
 
@@ -169,7 +168,7 @@
     [navigationView addSubview:titleLabel];
     
     //set leftBarView
-    UIImageView *leftImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 90, 180, 916)];
+    UIImageView *leftImgView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 90, 180, 934)];
     [leftImgView setImage:[UIImage imageNamed:@"bx_left_bar_bg"]];
     [self.view addSubview:leftImgView];
     
@@ -384,7 +383,7 @@
     order.showUrl = @"m.alipay.com";
 
     //应用注册scheme,在AlixPayDemo-Info.plist定义URL types
-    NSString *appScheme = @"cxgamesdk";
+    NSString *appScheme = self.cxParams.appScheme;
     
     //将商品信息拼接成字符串
     NSString *orderSpec = [order description];

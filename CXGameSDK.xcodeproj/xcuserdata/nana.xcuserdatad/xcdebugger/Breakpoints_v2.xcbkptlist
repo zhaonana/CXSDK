@@ -217,12 +217,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.m"
-            timestampString = "442038547.958473"
+            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.mm"
+            timestampString = "442050620.798285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "637"
-            endingLineNumber = "637">
+            startingLineNumber = "636"
+            endingLineNumber = "636">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -231,12 +231,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.m"
-            timestampString = "442038547.958473"
+            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.mm"
+            timestampString = "442050620.798285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "624"
-            endingLineNumber = "624">
+            startingLineNumber = "623"
+            endingLineNumber = "623">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -245,12 +245,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.m"
-            timestampString = "442038547.958473"
+            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.mm"
+            timestampString = "442050620.798285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "614"
-            endingLineNumber = "614">
+            startingLineNumber = "613"
+            endingLineNumber = "613">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -259,12 +259,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.m"
-            timestampString = "442038547.958473"
+            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.mm"
+            timestampString = "442050620.798285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "584"
-            endingLineNumber = "584">
+            startingLineNumber = "583"
+            endingLineNumber = "583">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -273,12 +273,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.m"
-            timestampString = "442038547.958473"
+            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.mm"
+            timestampString = "442050620.798285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "563"
-            endingLineNumber = "563">
+            startingLineNumber = "562"
+            endingLineNumber = "562">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -287,12 +287,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.m"
-            timestampString = "442038547.958473"
+            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.mm"
+            timestampString = "442050620.798285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "547"
-            endingLineNumber = "547">
+            startingLineNumber = "546"
+            endingLineNumber = "546">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -301,12 +301,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.m"
-            timestampString = "442038547.958473"
+            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.mm"
+            timestampString = "442050620.798285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "528"
-            endingLineNumber = "528">
+            startingLineNumber = "527"
+            endingLineNumber = "527">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -315,12 +315,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.m"
-            timestampString = "442038547.958473"
+            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.mm"
+            timestampString = "442050620.798285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "493"
-            endingLineNumber = "493">
+            startingLineNumber = "492"
+            endingLineNumber = "492">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -329,12 +329,12 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.m"
-            timestampString = "442038547.958473"
+            filePath = "CXGameSDK/ViewControllers/Pay/PayViewController.mm"
+            timestampString = "442050620.798285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "507"
-            endingLineNumber = "507">
+            startingLineNumber = "506"
+            endingLineNumber = "506">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

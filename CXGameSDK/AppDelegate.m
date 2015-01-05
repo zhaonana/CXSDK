@@ -9,7 +9,6 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 #import "TalkingDataAppCpa.h"
-#import <AlipaySDK/AlipaySDK.h>
 #import "BPPurchaseHelper.h"
 
 @implementation AppDelegate
@@ -35,12 +34,6 @@
     [[BPPurchaseHelper sharedHelper] purchasePaymentResult:url];
     
     return YES;
-}
-
-- (NSUInteger)application:(UIApplication*)application supportedInterfaceOrientationsForWindow:(UIWindow*)window
-{
-    // iPhone doesn't support upside down by default, while the iPad does.  Override to allow all orientations always, and let the root view controller decide what's allowed (the supported orientations mask gets intersected).
-    return UIInterfaceOrientationMaskAll;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
