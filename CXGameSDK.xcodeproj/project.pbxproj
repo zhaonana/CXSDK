@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		390E2FFF1A5B7C7A00B31038 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 390E2FFE1A5B7C7A00B31038 /* Default-568h@2x.png */; };
 		391A76791A527C3A00463063 /* BPPurchaseHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 391A76781A527C3A00463063 /* BPPurchaseHelper.m */; };
 		391A767F1A53990700463063 /* BaseNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391A767E1A53990700463063 /* BaseNavigationController.m */; };
 		391A768E1A53A62D00463063 /* bx_left_bar_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 391A76831A53A62D00463063 /* bx_left_bar_bg.png */; };
@@ -184,6 +185,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		390E2FFE1A5B7C7A00B31038 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		391A76771A527C3A00463063 /* BPPurchaseHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPurchaseHelper.h; sourceTree = "<group>"; };
 		391A76781A527C3A00463063 /* BPPurchaseHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPurchaseHelper.m; sourceTree = "<group>"; };
 		391A767D1A53990700463063 /* BaseNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseNavigationController.h; sourceTree = "<group>"; };
@@ -623,6 +625,7 @@
 		395F40EB19EE18800002AB2D = {
 			isa = PBXGroup;
 			children = (
+				390E2FFE1A5B7C7A00B31038 /* Default-568h@2x.png */,
 				395F40FD19EE18800002AB2D /* CXGameSDK */,
 				395F411619EE18800002AB2D /* CXGameSDKTests */,
 				395F40F619EE18800002AB2D /* Frameworks */,
@@ -1216,6 +1219,7 @@
 				39B6BB9819F914F200394492 /* padXiala.png in Resources */,
 				3997A53819F1084E0073D6F2 /* padShuruyanzhengma@2x.png in Resources */,
 				3997A53D19F1084E0073D6F2 /* padYoukedengludianji.png in Resources */,
+				390E2FFF1A5B7C7A00B31038 /* Default-568h@2x.png in Resources */,
 				3998E8A21A03A3F900A0B090 /* padQqhui@2x.png in Resources */,
 				3943D9AE1A51154C0093BFE6 /* AlipaySDK.bundle in Resources */,
 				391A76961A53A62D00463063 /* pay_click.png in Resources */,
