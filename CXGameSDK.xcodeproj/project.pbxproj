@@ -172,6 +172,7 @@
 		39B6BB9519F9145E00394492 /* CXxiala@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39B6BB9319F9145E00394492 /* CXxiala@2x.png */; };
 		39B6BB9819F914F200394492 /* padXiala.png in Resources */ = {isa = PBXBuildFile; fileRef = 39B6BB9619F914F200394492 /* padXiala.png */; };
 		39B6BB9919F914F200394492 /* padXiala@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39B6BB9719F914F200394492 /* padXiala@2x.png */; };
+		39FC2C4D1A60D779001C2521 /* AlipayKeyString.m in Sources */ = {isa = PBXBuildFile; fileRef = 39FC2C4C1A60D779001C2521 /* AlipayKeyString.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -492,6 +493,8 @@
 		39BA31991A59281E0057DF2A /* x509.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509.h; sourceTree = "<group>"; };
 		39BA319A1A59281E0057DF2A /* x509_vfy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509_vfy.h; sourceTree = "<group>"; };
 		39BA319B1A59281E0057DF2A /* x509v3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = x509v3.h; sourceTree = "<group>"; };
+		39FC2C4B1A60D779001C2521 /* AlipayKeyString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlipayKeyString.h; sourceTree = "<group>"; };
+		39FC2C4C1A60D779001C2521 /* AlipayKeyString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlipayKeyString.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -816,6 +819,8 @@
 				395F415C19EE19010002AB2D /* PreferencesUtils.m */,
 				395F415D19EE19010002AB2D /* StringUtil.h */,
 				395F415E19EE19010002AB2D /* StringUtil.m */,
+				39FC2C4B1A60D779001C2521 /* AlipayKeyString.h */,
+				39FC2C4C1A60D779001C2521 /* AlipayKeyString.m */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1353,6 +1358,7 @@
 				399F118F19F6070C001C16B2 /* ResetpasswordViewController.m in Sources */,
 				395F416919EE19010002AB2D /* UIImageView+AFNetworking.m in Sources */,
 				3943D9551A510BA10093BFE6 /* Order.m in Sources */,
+				39FC2C4D1A60D779001C2521 /* AlipayKeyString.m in Sources */,
 				395F416119EE19010002AB2D /* AFHTTPClient.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

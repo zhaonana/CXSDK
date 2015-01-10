@@ -59,7 +59,7 @@
 {
     //setisBindPhoneLab
     _isBindPhoneLab = [[UILabel alloc] initWithFrame:CGRectMake(26, 68, 177, 54)];
-    [_isBindPhoneLab setText:@"未绑定手机号，通过联系客服QQ找回密码2303134328"];
+    [_isBindPhoneLab setText:@"未绑定手机号，通过联系客服QQ找回密码1489595180"];
     [_isBindPhoneLab setFont:[UIFont systemFontOfSize:13.0]];
     [_isBindPhoneLab setNumberOfLines:0];
     [_isBindPhoneLab setTextColor:[UIColor redColor]];
@@ -123,7 +123,7 @@
 {
     //setisBindPhoneLab
     _isBindPhoneLab = [[UILabel alloc] initWithFrame:CGRectMake(29, 78, 228, 70)];
-    [_isBindPhoneLab setText:@"未绑定手机号，通过联系客服QQ找回密码2303134328"];
+    [_isBindPhoneLab setText:@"未绑定手机号，通过联系客服QQ找回密码1489595180"];
     [_isBindPhoneLab setFont:[UIFont systemFontOfSize:15.0]];
     [_isBindPhoneLab setNumberOfLines:0];
     [_isBindPhoneLab setTextColor:[UIColor redColor]];

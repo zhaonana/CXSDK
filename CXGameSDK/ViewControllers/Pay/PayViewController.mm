@@ -13,6 +13,7 @@
 #import "UPPayPlugin.h"
 #import "TalkingDataAppCpa.h"
 #import "CXCommon.h"
+#import "AlipayKeyString.h"
 
 #define kUPPayMode @"00"
 //支付成功通知
@@ -259,7 +260,7 @@
 {
     switch (sender.tag) {
         case 100: { //返回
-            [self dismissViewControllerAnimated:YES completion:^{
+            [self dismissViewControllerAnimated:NO completion:^{
                 
             }];
         }
@@ -346,7 +347,8 @@
                 NSDictionary *dic = [responseObj objectForKey:@"data"];
                 NSString *order_id = [dic objectForKey:@"order_id"];
                 NSString *notify_url = [dic objectForKey:@"notify_url"];
-                [self setOrderInfoWithOrderId:order_id notifyURL:notify_url];
+                NSString *param = [dic objectForKey:@"param"];
+                [self setOrderInfoWithOrderId:order_id notifyURL:notify_url param:param];
             } else {
                 [self showToast:code];
             }
@@ -379,11 +381,15 @@
 }
 
 #pragma mark - aliPay
-- (void)setOrderInfoWithOrderId:(NSString *)orderId notifyURL:(NSString *)notifyURL
+- (void)setOrderInfoWithOrderId:(NSString *)orderId notifyURL:(NSString *)notifyURL param:(NSString *)param
 {
-    NSString *partner = @"2088711263088594";
-    NSString *seller = @"2088711263088594";
-    NSString *privateKey = @"MIICdwIBADANBgkqhkiG9w0BAQEFAASCAmEwggJdAgEAAoGBAJYYMbBLFoaN2rTBgQjgta1DmXY6yj14VLqIhjt6wAI15qEhGzTf4x78sqkXCRdurEkpLCwBaMxsuU4XoKGBJofj99nt8PSaKu/kYKwZwpaGzKHbz5QTInxIc3rFZNCc8zYU+vA4VwL3Ckdj3iuPFVU1mxV4k2JUAAIkqmWxiGf5AgMBAAECgYBMEUrta8CoxK+4t/DrTOcGPqJB1x2z9Y4LUzGkZ1t0Q1j1BFBDhcwXYj4xj+kdpQtPsLwgOT6hi+CGAVd5QnkB0wHHj2EhJwN7v1EBBu/9ZvBGHPtZ2UIepQ3Ovlamv50nrxKxQuXOmtTXhGLarhG2+x6/BSHStlc5MtbBQHM3GQJBAMdURYtJKc21qOwcCXEhAoLLz1SKkHfZhR5GZdYDTGsyQIAqdlSMo62KUktVaYC9agf8fF1GpxhG8d8ZyOAMqL8CQQDAxHyXPypLbZg3ko53HBhwuqEBUNTFQsTyzR+xmf0/bYHD56SAI3XdjTJE7VV60Sqa8jV+oPIcLxX1n0Gc3iVHAkEAhtgEn+Bjzky5NNkWrhhlqXQVEx0V9G4Ldtqq46ehl9cL+WhAWpw10h2D5ICoebYpt7Nfsn4sZekAkSvRT3hg4wJBAKH39p+2yTjbexymneHiz35YsdPDMSQV+Bny1ICL3MggoPoUdpncMbrYWrajnEE34s6SWPRvEz8vKQpap+zAkx0CQF+PBK6MK59NA9F396o4da2qyGc2q/onMnVAMXqtKHcnWW37ICiuV3Es8j3LbcLOK1wl/vAbFovF5szbdgu1GTw=";
+    NSString *paramJson = [AlipayKeyString getAlipayParam:param];
+    NSData *paramData = [paramJson dataUsingEncoding:NSUTF8StringEncoding];
+    NSDictionary *paramDic = [NSJSONSerialization JSONObjectWithData:paramData options:NSJSONReadingMutableLeaves error:nil];
+    
+    NSString *partner = [paramDic objectForKey:@"appid"];
+    NSString *seller = [paramDic objectForKey:@"appid"];
+    NSString *privateKey = [paramDic objectForKey:@"pri.cert"];
     
     Order *order = [[Order alloc] init];
     order.partner = partner;
