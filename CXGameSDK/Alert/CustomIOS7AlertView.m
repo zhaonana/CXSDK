@@ -180,7 +180,11 @@ CGFloat buttonSpacerHeight = 0;
 - (UIView *)createContainerView
 {
     if (containerView == NULL) {
-        containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 230, 273)];
+        if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
+            containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 230, 273)];
+        } else {
+            containerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 289, 342)];
+        }
     }
     CGSize screenSize = [self countScreenSize];
     CGSize dialogSize = [self countDialogSize];
@@ -195,9 +199,9 @@ CGFloat buttonSpacerHeight = 0;
     CAGradientLayer *gradient = [CAGradientLayer layer];
     gradient.frame = dialogContainer.bounds;
     gradient.colors = [NSArray arrayWithObjects:
-                       (id)[[UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:1.0f] CGColor],
-                       (id)[[UIColor colorWithRed:233.0/255.0 green:233.0/255.0 blue:233.0/255.0 alpha:1.0f] CGColor],
-                       (id)[[UIColor colorWithRed:218.0/255.0 green:218.0/255.0 blue:218.0/255.0 alpha:1.0f] CGColor],
+                       (id)[[UIColor colorWithRed:33.0/255.0 green:33.0/255.0 blue:33.0/255.0 alpha:0.85f] CGColor],
+                       (id)[[UIColor colorWithRed:33.0/255.0 green:33.0/255.0 blue:33.0/255.0 alpha:0.85f] CGColor],
+                       (id)[[UIColor colorWithRed:33.0/255.0 green:33.0/255.0 blue:33.0/255.0 alpha:0.85f] CGColor],
                        nil];
 
     CGFloat cornerRadius = kCustomIOS7AlertViewCornerRadius;

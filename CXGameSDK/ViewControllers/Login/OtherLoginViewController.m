@@ -102,6 +102,7 @@
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType
 {
     NSURL *url = [request URL];
+
     if ([url.scheme isEqualToString:@"cxapi"]) {
         NSString *jsonStr = [url.absoluteString stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSRange range = [jsonStr rangeOfString:@"{"];
